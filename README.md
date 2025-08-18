@@ -27,4 +27,9 @@ This project implements **CRUD operations (Create, Read, Update, Delete)** with 
 - **Bcrypt** for password hashing  
 
 ---
+## 🛠️ Installation & Setup  
 
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/SouravChowdhuryRimel/Portfolio-backend-project
+   cd portfolio-backend
