@@ -3,6 +3,9 @@ const userController = require("../controllers/userController.js");
 const experienceController = require("../controllers/experienceController.js");
 const educationController = require("../controllers/educationController.js");
 const advantageController = require("../controllers/advantageController.js");
+const portfolioController = require("../controllers/portfolioController.js");
+const serviceController = require("../controllers/serviceController.js");
+const testimonialController = require("../controllers/testimonialController.js");
 const middleware = require("../middlewares/authVerification.js");
 
 let router = express.Router();
@@ -71,6 +74,51 @@ router.delete(
   "/delete-advantage/:id",
   middleware,
   advantageController.deleteAdvantage
+);
+
+// Portfolio
+router.post(
+  "/create-portfolio",
+  middleware,
+  portfolioController.createPortfolio
+);
+router.get("/all-portfolio", portfolioController.allPortfolio);
+router.get("/single-portfolio/:id", portfolioController.singlePortfolio);
+router.put(
+  "/update-portfolio/:id",
+  middleware,
+  portfolioController.updatePortfolio
+);
+router.delete(
+  "/delete-portfolio/:id",
+  middleware,
+  portfolioController.deletePortfolio
+);
+
+// Portfolio
+router.post("/create-service", middleware, serviceController.createService);
+router.get("/all-service", serviceController.allService);
+router.get("/single-service/:id", serviceController.singleService);
+router.put("/update-service/:id", middleware, serviceController.updateService);
+router.delete(
+  "/delete-service/:id",
+  middleware,
+  serviceController.deleteService
+);
+
+// Testimonial
+router.post("/create-testimonial", middleware, testimonialController.createTestimonial);
+router.get("/all-testimonial", testimonialController.allTestimonial);
+router.get("/single-testimonial/:id", testimonialController.singleTestimonial);
+router.put(
+  "/update-testimonial/:id",
+  middleware,
+  testimonialController.updateTestimonial
+);
+router.delete(
+  "/delete-testimonial/:id",
+  middleware,
+  testimonialController.deleteTestimonial
 );
 
 module.exports = router;
