@@ -5,12 +5,12 @@ const dataSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    company: {
+    category: {
       type: String,
       required: true,
     },
-    description: {
-      type: String,
+    percent: {
+      type: Number,
       required: true,
     },
     time: {
@@ -24,7 +24,7 @@ const dataSchema = new mongoose.Schema(
   }
 );
 
-const experienceModel = mongoose.model("experiences", dataSchema);
+const advantageModel = mongoose.model("advantages", dataSchema);
 
 
-module.exports = experienceModel;
+module.exports = advantageModel;
