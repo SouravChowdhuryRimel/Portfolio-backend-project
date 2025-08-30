@@ -6,6 +6,7 @@ const advantageController = require("../controllers/advantageController.js");
 const portfolioController = require("../controllers/portfolioController.js");
 const serviceController = require("../controllers/serviceController.js");
 const testimonialController = require("../controllers/testimonialController.js");
+const contactController = require("../controllers/contactController.js");
 const middleware = require("../middlewares/authVerification.js");
 
 let router = express.Router();
@@ -95,7 +96,7 @@ router.delete(
   portfolioController.deletePortfolio
 );
 
-// Portfolio
+// Service
 router.post("/create-service", middleware, serviceController.createService);
 router.get("/all-service", serviceController.allService);
 router.get("/single-service/:id", serviceController.singleService);
@@ -120,5 +121,16 @@ router.delete(
   middleware,
   testimonialController.deleteTestimonial
 );
+
+// Contact
+router.post("/create-contact", contactController.createContact);
+router.get("/all-contact", contactController.allContact);
+router.get("/single-contact/:id", contactController.singleContact);
+router.delete(
+  "/delete-contact/:id",
+  middleware,
+  contactController.deleteContact
+);
+
 
 module.exports = router;
